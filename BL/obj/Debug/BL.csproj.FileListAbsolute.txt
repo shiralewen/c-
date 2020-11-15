@@ -1,0 +1,36 @@
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\bin\Debug\BL.dll
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\bin\Debug\BL.pdb
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\bin\Debug\Dal.dll
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\bin\Debug\Dte.dll
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\bin\Debug\Dal.pdb
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\bin\Debug\Dte.pdb
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\obj\Debug\BL.dll
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\obj\Debug\BL.pdb
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\bin\Debug\BL.dll.config
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\bin\Debug\EntityFramework.dll
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\bin\Debug\Dal.dll.config
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\bin\Debug\Dte.dll.config
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\bin\Debug\EntityFramework.xml
+C:\Users\1\Desktop\לימודים\מגמה\פרויקט סיום\c#\finalProject\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\bin\Debug\BL.dll.config
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\bin\Debug\BL.dll
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\bin\Debug\BL.pdb
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\bin\Debug\Dal.dll
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\bin\Debug\Dte.dll
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\bin\Debug\EntityFramework.dll
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\bin\Debug\Dal.pdb
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\bin\Debug\Dal.dll.config
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\bin\Debug\Dte.pdb
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\bin\Debug\Dte.dll.config
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\bin\Debug\EntityFramework.xml
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\obj\Debug\BL.dll
+C:\Users\1\Desktop\final_project\c#\finalProject\BL\obj\Debug\BL.pdb

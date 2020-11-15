@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="activities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="describtion" Type="nvarchar(max)" />
+    <Property Name="name" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="place" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="sumPeople" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Project.dbo.Disabilities_child' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Disabilities_child">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idKindChild" Type="int" />
+    <Property Name="userCode" Type="int" />
+    <Property Name="dergi" Type="int" />
+  </EntityType>
+  <EntityType Name="Disabilities_Event">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEvent" Type="int" />
+    <Property Name="idKindChild" Type="int" />
+    <Property Name="dergi" Type="int" />
+  </EntityType>
+  <EntityType Name="event">
+    <Key>
+      <PropertyRef Name="idEvent" />
+    </Key>
+    <Property Name="idEvent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idActivity" Type="int" />
+    <Property Name="TZChild" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="TzVolunteer" Type="varchar" MaxLength="9" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kindChildren">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Match">
+    <Key>
+      <PropertyRef Name="TzChild" />
+    </Key>
+    <Property Name="TzChild" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="TzVolunteer" Type="varchar" MaxLength="9" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Preferences">
+    <Key>
+      <PropertyRef Name="UserCode" />
+    </Key>
+    <Property Name="UserCode" Type="int" Nullable="false" />
+    <Property Name="idKindChild" Type="int" Nullable="false" />
+    <Property Name="levels" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="register">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="idActivity" Type="int" />
+    <Property Name="userCode" Type="int" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="6" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="userCode" />
+    </Key>
+    <Property Name="userCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tz" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="lastName" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="firstName" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="street" Type="varchar" MaxLength="15" />
+    <Property Name="phon" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="mail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="dateborn" Type="date" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="isAviable" Type="bit" />
+  </EntityType>
+  <Association Name="FK__Disabilit__idKin__02FC7413">
+    <End Role="kindChildren" Type="Self.kindChildren" Multiplicity="0..1" />
+    <End Role="Disabilities_child" Type="Self.Disabilities_child" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kindChildren">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Disabilities_child">
+        <PropertyRef Name="idKindChild" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Disabilit__idKin__05D8E0BE">
+    <End Role="kindChildren" Type="Self.kindChildren" Multiplicity="0..1" />
+    <End Role="Disabilities_Event" Type="Self.Disabilities_Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kindChildren">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Disabilities_Event">
+        <PropertyRef Name="idKindChild" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Disabilit__userC__34C8D9D1">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="Disabilities_child" Type="Self.Disabilities_child" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="userCode" />
+      </Principal>
+      <Dependent Role="Disabilities_child">
+        <PropertyRef Name="userCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Disabilities_Event_event">
+    <End Role="event" Type="Self.event" Multiplicity="0..1" />
+    <End Role="Disabilities_Event" Type="Self.Disabilities_Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="event">
+        <PropertyRef Name="idEvent" />
+      </Principal>
+      <Dependent Role="Disabilities_Event">
+        <PropertyRef Name="idEvent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_event_activities">
+    <End Role="activities" Type="Self.activities" Multiplicity="0..1" />
+    <End Role="event" Type="Self.event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="activities">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="event">
+        <PropertyRef Name="idActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_event_Match">
+    <End Role="Match" Type="Self.Match" Multiplicity="1" />
+    <End Role="event" Type="Self.event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Match">
+        <PropertyRef Name="TzChild" />
+      </Principal>
+      <Dependent Role="event">
+        <PropertyRef Name="TZChild" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Preferences_kindChildren">
+    <End Role="kindChildren" Type="Self.kindChildren" Multiplicity="1" />
+    <End Role="Preferences" Type="Self.Preferences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kindChildren">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Preferences">
+        <PropertyRef Name="idKindChild" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_register_activities">
+    <End Role="activities" Type="Self.activities" Multiplicity="0..1" />
+    <End Role="register" Type="Self.register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="activities">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="register">
+        <PropertyRef Name="idActivity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_register_users">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="register" Type="Self.register" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="userCode" />
+      </Principal>
+      <Dependent Role="register">
+        <PropertyRef Name="userCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_Preferences">
+    <End Role="Preferences" Type="Self.Preferences" Multiplicity="1" />
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Preferences">
+        <PropertyRef Name="UserCode" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="userCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProjectModelStoreContainer">
+    <EntitySet Name="activities" EntityType="Self.activities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Disabilities_Event" EntityType="Self.Disabilities_Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="event" EntityType="Self.event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kindChildren" EntityType="Self.kindChildren" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Match" EntityType="Self.Match" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Preferences" EntityType="Self.Preferences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="register" EntityType="Self.register" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Disabilities_child" EntityType="Self.Disabilities_child" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Disabilities_child].[code] AS [code], 
+    [Disabilities_child].[idKindChild] AS [idKindChild], 
+    [Disabilities_child].[userCode] AS [userCode], 
+    [Disabilities_child].[dergi] AS [dergi]
+    FROM [dbo].[Disabilities_child] AS [Disabilities_child]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Disabilit__idKin__02FC7413" Association="Self.FK__Disabilit__idKin__02FC7413">
+      <End Role="kindChildren" EntitySet="kindChildren" />
+      <End Role="Disabilities_child" EntitySet="Disabilities_child" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Disabilit__idKin__05D8E0BE" Association="Self.FK__Disabilit__idKin__05D8E0BE">
+      <End Role="kindChildren" EntitySet="kindChildren" />
+      <End Role="Disabilities_Event" EntitySet="Disabilities_Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Disabilit__userC__34C8D9D1" Association="Self.FK__Disabilit__userC__34C8D9D1">
+      <End Role="users" EntitySet="users" />
+      <End Role="Disabilities_child" EntitySet="Disabilities_child" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Disabilities_Event_event" Association="Self.FK_Disabilities_Event_event">
+      <End Role="event" EntitySet="event" />
+      <End Role="Disabilities_Event" EntitySet="Disabilities_Event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_event_activities" Association="Self.FK_event_activities">
+      <End Role="activities" EntitySet="activities" />
+      <End Role="event" EntitySet="event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_event_Match" Association="Self.FK_event_Match">
+      <End Role="Match" EntitySet="Match" />
+      <End Role="event" EntitySet="event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Preferences_kindChildren" Association="Self.FK_Preferences_kindChildren">
+      <End Role="kindChildren" EntitySet="kindChildren" />
+      <End Role="Preferences" EntitySet="Preferences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_register_activities" Association="Self.FK_register_activities">
+      <End Role="activities" EntitySet="activities" />
+      <End Role="register" EntitySet="register" />
+    </AssociationSet>
+    <AssociationSet Name="FK_register_users" Association="Self.FK_register_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="register" EntitySet="register" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_Preferences" Association="Self.FK_users_Preferences">
+      <End Role="Preferences" EntitySet="Preferences" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

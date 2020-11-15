@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6278a79dd4bf449e937fc6fc2872fe53" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjectModel.activities" Width="1.5" PointX="1.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Disabilities_Event" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.event" Width="1.5" PointX="6" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.kindChildren" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Match" Width="1.5" PointX="1.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Preferences" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.register" Width="1.5" PointX="7.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.users" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectModel.Disabilities_child" Width="1.5" PointX="7.5" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="ProjectModel.FK_event_activities" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_register_activities" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Disabilit__idKin__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_Disabilities_Event_event" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_event_Match" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Disabilit__idKin__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_Preferences_kindChildren" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_users_Preferences" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK_register_users" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectModel.FK__Disabilit__userC__34C8D9D1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
